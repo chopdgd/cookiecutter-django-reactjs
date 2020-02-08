@@ -328,6 +328,7 @@ SOCIALACCOUNT_ADAPTER = "{{cookiecutter.project_slug}}.users.adapters.SocialAcco
 INSTALLED_APPS += ["compressor"]
 STATICFILES_FINDERS += ["compressor.finders.CompressorFinder"]
 {%- endif %}
+
 {% if cookiecutter.use_drf == "y" -%}
 # django-reset-framework
 # -------------------------------------------------------------------------------
@@ -353,6 +354,7 @@ REST_FRAMEWORK = {
     "DEFAULT_SCHEMA_CLASS": "rest_framework.schemas.coreapi.AutoSchema",
 }
 {%- endif %}
+
 {% if cookiecutter.js_task_runner == "react" -%}
 # django-cors-headers
 # ------------------------------------------------------------------------------

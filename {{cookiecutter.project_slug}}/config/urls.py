@@ -8,7 +8,7 @@ from django.views import defaults as default_views
 {% if cookiecutter.use_drf == 'y' -%}
 from graphene_file_upload.django import FileUploadGraphQLView
 {%- endif -%}
-{%- if cookiecutter.use_drf == 'y' -%}
+{% if cookiecutter.use_drf == 'y' -%}
 from rest_framework.authtoken.views import obtain_auth_token
 from rest_framework.documentation import include_docs_urls
 {%- endif %}
@@ -31,6 +31,7 @@ urlpatterns = [
     # Your stuff: custom urls includes go here
 
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+
 {% if cookiecutter.use_drf == 'y' -%}
 # API URLS
 urlpatterns += [
