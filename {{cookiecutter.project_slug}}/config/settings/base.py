@@ -9,7 +9,7 @@ ROOT_DIR = (
     environ.Path(__file__) - 3
 )  # ({{ cookiecutter.project_slug }}/config/settings/base.py - 3 = {{ cookiecutter.project_slug }}/)
 APPS_DIR = ROOT_DIR.path("{{ cookiecutter.project_slug }}")
-{% if cookiecutter.js_task_runner == "CreateReactApp" -%}
+{% if cookiecutter.js_task_runner == "react" -%}
 REACT_APP_DIR = ROOT_DIR.path("frontend")
 {%- endif %}
 
@@ -80,7 +80,7 @@ THIRD_PARTY_APPS = [
     "allauth.account",
     "allauth.socialaccount",
     "rest_framework",
-    {% if cookiecutter.js_task_runner == "CreateReactApp" -%}
+    {% if cookiecutter.js_task_runner == "react" -%}
     "corsheaders",
     "graphene_django",
     "django_filters",
@@ -145,7 +145,7 @@ MIDDLEWARE = [
     "whitenoise.middleware.WhiteNoiseMiddleware",
 {%- endif %}
     "django.contrib.sessions.middleware.SessionMiddleware",
-    {% if cookiecutter.js_task_runner == "CreateReactApp" -%}
+    {% if cookiecutter.js_task_runner == "react" -%}
     "corsheaders.middleware.CorsMiddleware",  # SEE: https://github.com/ottoyiu/django-cors-headers#setup
     {%- endif %}
     "django.middleware.locale.LocaleMiddleware",
@@ -166,7 +166,7 @@ STATIC_URL = "/static/"
 # https://docs.djangoproject.com/en/dev/ref/contrib/staticfiles/#std:setting-STATICFILES_DIRS
 STATICFILES_DIRS = [
     str(APPS_DIR.path("static")),
-    {% if cookiecutter.js_task_runner == "CreateReactApp" -%}
+    {% if cookiecutter.js_task_runner == "react" -%}
     os.path.join(str(REACT_APP_DIR.path("build")), 'static'),
     {%- endif %}
 ]
@@ -353,7 +353,7 @@ REST_FRAMEWORK = {
     "DEFAULT_SCHEMA_CLASS": "rest_framework.schemas.coreapi.AutoSchema",
 }
 {%- endif %}
-{% if cookiecutter.js_task_runner == "CreateReactApp" -%}
+{% if cookiecutter.js_task_runner == "react" -%}
 # django-cors-headers
 # ------------------------------------------------------------------------------
 # https://github.com/ottoyiu/django-cors-headers#cors_origin_allow_all

@@ -367,7 +367,7 @@ def main():
     if "{{ cookiecutter.js_task_runner}}".lower() == "gulp":
         remove_react_files()
 
-    elif "{{ cookiecutter.js_task_runner}}".lower() == "createreactapp":
+    elif "{{ cookiecutter.js_task_runner}}".lower() == "react":
         remove_gulp_files()
 
         if "{{ cookiecutter.use_heroku }}".lower() == "n":

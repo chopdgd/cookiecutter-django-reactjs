@@ -43,7 +43,7 @@ urlpatterns += [
 ]
 {%- endif %}
 
-{% if cookiecutter.js_task_runner == 'CreateReactApp' -%}
+{% if cookiecutter.js_task_runner == 'react' -%}
 # API URLS
 urlpatterns += [
     # GraphQL
