@@ -1,28 +1,34 @@
-pytz==2019.3  # https://github.com/stub42/pytz
-python-slugify==4.0.0  # https://github.com/un33k/python-slugify
-Pillow==7.0.0  # https://github.com/python-pillow/Pillow
+pytz==2020.1  # https://github.com/stub42/pytz
+python-slugify==4.0.1  # https://github.com/un33k/python-slugify
+Pillow==8.0.0  # https://github.com/python-pillow/Pillow
 {%- if cookiecutter.use_compressor == "y" %}
 rcssmin==1.0.6{% if cookiecutter.windows == 'y' and cookiecutter.use_docker == 'n' %} --install-option="--without-c-extensions"{% endif %}  # https://github.com/ndparker/rcssmin
 {%- endif %}
-argon2-cffi==19.2.0  # https://github.com/hynek/argon2_cffi
+argon2-cffi==20.1.0  # https://github.com/hynek/argon2_cffi
 {%- if cookiecutter.use_whitenoise == 'y' %}
-whitenoise==5.0.1  # https://github.com/evansd/whitenoise
+whitenoise==5.2.0  # https://github.com/evansd/whitenoise
 {%- endif %}
-redis==3.4.1 # https://github.com/andymccurdy/redis-py
+redis==3.5.3 # https://github.com/andymccurdy/redis-py
+hiredis==1.1.0  # https://github.com/redis/hiredis-py
 {%- if cookiecutter.use_celery == "y" %}
-celery==4.4.0  # pyup: < 5.0  # https://github.com/celery/celery
-django-celery-beat==1.6.0  # https://github.com/celery/django-celery-beat
+celery==4.4.6  # pyup: < 5.0  # https://github.com/celery/celery
+django-celery-beat==2.0.0  # https://github.com/celery/django-celery-beat
 {%- if cookiecutter.use_docker == 'y' %}
-flower==0.9.3  # https://github.com/mher/flower
+flower==0.9.5  # https://github.com/mher/flower
+uvicorn==0.11.8  # https://github.com/encode/uvicorn
 {%- endif %}
+{%- endif %}
+{%- if cookiecutter.use_async == 'y' %}
+uvicorn==0.11.8 #  pyup: < 12.0.0 # https://github.com/encode/uvicorn 
+wsproto==0.15.0  # https://github.com/python-hyper/wsproto/
 {%- endif %}
 
 # Django
 # ------------------------------------------------------------------------------
-django==2.2.10  # pyup: < 3.0  # https://www.djangoproject.com/
+django==3.1.3  # pyup: > 3.0  # https://www.djangoproject.com/
 django-environ==0.4.5  # https://github.com/joke2k/django-environ
 django-model-utils==4.0.0  # https://github.com/jazzband/django-model-utils
-django-allauth==0.41.0  # https://github.com/pennersr/django-allauth
+django-allauth==0.44.0  # https://github.com/pennersr/django-allauth
 django-crispy-forms==1.8.1  # https://github.com/django-crispy-forms/django-crispy-forms
 {%- if cookiecutter.use_compressor == "y" %}
 django-compressor==2.4  # https://github.com/django-compressor/django-compressor
@@ -31,16 +37,16 @@ django-redis==4.11.0  # https://github.com/niwinz/django-redis
 
 {%- if cookiecutter.use_drf == "y" %}
 # Django REST Framework
-djangorestframework==3.11.0  # https://github.com/encode/django-rest-framework
+djangorestframework==3.12.0  # https://github.com/encode/django-rest-framework
 coreapi==2.3.3  # https://github.com/core-api/python-client
 {%- endif %}
 
 {% if cookiecutter.js_task_runner == "react" %}
 # Django/ReactJS integration
 # ------------------------------------------------------------------------------
-django-cors-headers==3.2.1  # https://github.com/ottoyiu/django-cors-headers
-graphene-django==2.8.1 # http://docs.graphene-python.org/projects/django/en/latest/
-graphene-django-optimizer==0.6.1  # https://github.com/tfoxy/graphene-django-optimizer
+django-cors-headers==3.5.0  # https://github.com/ottoyiu/django-cors-headers
+graphene-django==2.13.0 # http://docs.graphene-python.org/projects/django/en/latest/
+graphene-django-optimizer==0.7.1  # https://github.com/tfoxy/graphene-django-optimizer
 graphene-file-upload==1.2.2  # https://github.com/lmcgartland/graphene-file-upload
-django-filter==2.2.0  # https://github.com/carltongibson/django-filter
+django-filter==2.4.0  # https://github.com/carltongibson/django-filter
 {%- endif %}

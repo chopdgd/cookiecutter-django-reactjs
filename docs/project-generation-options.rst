@@ -49,11 +49,11 @@ use_docker:
 postgresql_version:
     Select a PostgreSQL_ version to use. The choices are:
 
-    1. 11.3
-    2. 10.8
-    3. 9.6
-    4. 9.5
-    5. 9.4
+    1. 12.3
+    2. 11.8
+    3. 10.8
+    4. 9.6
+    5. 9.5
 
 js_task_runner:
     Select a JavaScript task runner. The choices are:
@@ -69,6 +69,22 @@ cloud_provider:
     3. None
 
     Note that if you choose no cloud provider, media files won't work.
+
+mail_service:
+    Select an email service that Django-Anymail provides
+
+    1. Mailgun_
+    2. `Amazon SES`_
+    3. Mailjet_
+    4. Mandrill_
+    5. Postmark_
+    6. SendGrid_
+    7. SendinBlue_
+    8. SparkPost_
+    9. `Other SMTP`_
+
+use_async:
+    Indicates whether the project should use web sockets with Uvicorn + Gunicorn.
 
 use_drf:
     Indicates whether the project should be configured to use `Django Rest Framework`_.
@@ -101,8 +117,8 @@ ci_tool:
     Select a CI tool for running tests. The choices are:
 
     1. None
-    2. Travis_
-    3. Gitlab_
+    2. `Travis CI`_
+    3. `Gitlab CI`_
 
 keep_local_envs_in_vcs:
     Indicates whether the project's ``.envs/.local/`` should be kept in VCS
@@ -131,6 +147,16 @@ debug:
 
 .. _AWS: https://aws.amazon.com/s3/
 .. _GCP: https://cloud.google.com/storage/
+
+.. _Amazon SES: https://aws.amazon.com/ses/
+.. _Mailgun: https://www.mailgun.com
+.. _Mailjet: https://www.mailjet.com
+.. _Mandrill: http://mandrill.com
+.. _Postmark: https://postmarkapp.com
+.. _SendGrid: https://sendgrid.com
+.. _SendinBlue: https://www.sendinblue.com
+.. _SparkPost: https://www.sparkpost.com
+.. _Other SMTP: https://anymail.readthedocs.io/en/stable/
 
 .. _Django Rest Framework: https://github.com/encode/django-rest-framework/
 

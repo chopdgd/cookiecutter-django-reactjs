@@ -110,6 +110,18 @@ function imgCompression() {
     .pipe(dest(paths.images))
 }
 
+{% if cookiecutter.use_async == 'y' -%}
+// Run django server
+function asyncRunServer() {
+  var cmd = spawn('gunicorn', [
+      'config.asgi', '-k', 'uvicorn.workers.UvicornWorker', '--reload'
+      ], {stdio: 'inherit'}
+  )
+  cmd.on('close', function(code) {
+    console.log('gunicorn exited with code ' + code)
+  })
+}
+{%- else %}
 // Run django server
 function runServer(cb) {
   var cmd = spawn('python', ['manage.py', 'runserver'], {stdio: 'inherit'})
@@ -118,6 +130,7 @@ function runServer(cb) {
     cb(code)
   })
 }
+{%- endif %}
 
 // Browser sync server for live reload
 function initBrowserSync() {
@@ -150,9 +163,9 @@ function initBrowserSync() {
 
 // Watch
 function watchPaths() {
-  watch(`${paths.sass}/*.scss`, styles)
-  watch(`${paths.templates}/**/*.html`).on("change", reload)
-  watch([`${paths.js}/*.js`, `!${paths.js}/*.min.js`], scripts).on("change", reload)
+  watch(`${paths.sass}/*.scss`{% if cookiecutter.windows == 'y' %}, { usePolling: true }{% endif %}, styles)
+  watch(`${paths.templates}/**/*.html`{% if cookiecutter.windows == 'y' %}, { usePolling: true }{% endif %}).on("change", reload)
+  watch([`${paths.js}/*.js`, `!${paths.js}/*.min.js`]{% if cookiecutter.windows == 'y' %}, { usePolling: true }{% endif %}, scripts).on("change", reload)
 }
 
 // Generate all assets
@@ -166,7 +179,11 @@ const generateAssets = parallel(
 // Set up dev environment
 const dev = parallel(
   {%- if cookiecutter.use_docker == 'n' %}
+  {%- if cookiecutter.use_async == 'y' %}
+  asyncRunServer,
+  {%- else %}
   runServer,
+  {%- endif %}
   {%- endif %}
   initBrowserSync,
   watchPaths

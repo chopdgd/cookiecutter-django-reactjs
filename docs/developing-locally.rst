@@ -9,23 +9,29 @@ Setting Up Development Environment
 
 Make sure to have the following on your host:
 
-* Python 3.7
+* Python 3.8
 * PostgreSQL_.
 * Redis_, if using Celery
+* Cookiecutter_
 
 First things first.
 
 #. Create a virtualenv: ::
 
-    $ python3.7 -m venv <virtual env path>
+    $ python3.8 -m venv <virtual env path>
 
 #. Activate the virtualenv you have just created: ::
 
     $ source <virtual env path>/bin/activate
 
+#. Install cookiecutter-django: ::
+
+    $ cookiecutter gh:pydanny/cookiecutter-django
+
 #. Install development requirements: ::
 
     $ pip install -r requirements/local.txt
+    $ git init # A git repo is required for pre-commit to install
     $ pre-commit install
 
      .. note::
@@ -68,12 +74,17 @@ First things first.
 
     $ python manage.py migrate
 
-#. See the application being served through Django development server: ::
+#. If you're running synchronously, see the application being served through Django development server: ::
 
     $ python manage.py runserver 0.0.0.0:8000
 
+or if you're running asynchronously: ::
+
+    $ uvicorn config.asgi:application --host 0.0.0.0 --reload
+
 .. _PostgreSQL: https://www.postgresql.org/download/
 .. _Redis: https://redis.io/download
+.. _CookieCutter: https://github.com/cookiecutter/cookiecutter
 .. _createdb: https://www.postgresql.org/docs/current/static/app-createdb.html
 .. _initial PostgreSQL set up: http://suite.opengeo.org/docs/latest/dataadmin/pgGettingStarted/firstconnect.html
 .. _postgres documentation: https://www.postgresql.org/docs/current/static/auth-pg-hba-conf.html

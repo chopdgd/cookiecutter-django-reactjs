@@ -5,7 +5,7 @@ Welcome to Cookiecutter Django's documentation!
 
 A Cookiecutter_ template for Django.
 
-.. _cookiecutter: https://github.com/audreyr/cookiecutter
+.. _cookiecutter: https://github.com/cookiecutter/cookiecutter
 
 Contents:
 
@@ -25,6 +25,7 @@ Contents:
    deployment-on-heroku
    deployment-with-docker
    docker-postgres-backups
+   websocket
    faq
    troubleshooting
 

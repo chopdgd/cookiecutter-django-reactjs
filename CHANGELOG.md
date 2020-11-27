@@ -1,6 +1,111 @@
 # Change Log
 All enhancements and patches to Cookiecutter Django will be documented in this file.
 
+<!-- GENERATOR_PLACEHOLDER -->
+
+## [2020-11-26]
+### Updated
+- Update django-extensions to 3.1.0 ([#2947](https://api.github.com/repos/pydanny/cookiecutter-django/pulls/2947))
+- Update pre-commit to 2.9.2 ([#2948](https://api.github.com/repos/pydanny/cookiecutter-django/pulls/2948))
+- Update django-allauth to 0.44.0 ([#2945](https://api.github.com/repos/pydanny/cookiecutter-django/pulls/2945))
+
+## [2020-11-25]
+### Changed
+- Bump peter-evans/create-pull-request from v3.5.0 to v3.5.1 ([#2944](https://api.github.com/repos/pydanny/cookiecutter-django/pulls/2944))
+
+## [2020-11-23]
+### Updated
+- Update uvicorn to 0.12.3 ([#2943](https://api.github.com/repos/pydanny/cookiecutter-django/pulls/2943))
+- Update pre-commit to 2.9.0 ([#2942](https://api.github.com/repos/pydanny/cookiecutter-django/pulls/2942))
+
+## [2020-09-10]
+### Updated
+- Update isort to 5.5.2 ([#2807](https://api.github.com/repos/pydanny/cookiecutter-django/pulls/2807))
+- Update sentry-sdk to 0.17.4 ([#2805](https://api.github.com/repos/pydanny/cookiecutter-django/pulls/2805))
+
+## [2020-09-09]
+### Changed
+- Update actions/setup-python requirement to v2.1.2 ([#2804](https://api.github.com/repos/pydanny/cookiecutter-django/pulls/2804))
+- Clean up nested venv files from `.gitignore` ([#2800](https://api.github.com/repos/pydanny/cookiecutter-django/pulls/2800))
+
+## [2020-09-08]
+### Changed
+- Traeffik and Django dockerfile changes ([#2801](https://api.github.com/repos/pydanny/cookiecutter-django/pulls/2801))
+
+## [2020-09-07]
+### Changed
+- Add :z/:Z to mounted volumes in {local,production}.yml ([#2663](https://api.github.com/repos/pydanny/cookiecutter-django/pulls/2663))
+- Remove --no-binary option for psycopg2 ([#2798](https://api.github.com/repos/pydanny/cookiecutter-django/pulls/2798))
+- Updated Gitlab CI to use Python 3.8 instead of Python 3.7 ([#2794](https://api.github.com/repos/pydanny/cookiecutter-django/pulls/2794))
+### Fixed
+- Fix options for sphinx-autobuild in docs Makefile ([#2799](https://api.github.com/repos/pydanny/cookiecutter-django/pulls/2799))
+### Updated
+- Update psycopg2-binary to 2.8.6 ([#2797](https://api.github.com/repos/pydanny/cookiecutter-django/pulls/2797))
+
+## [2020-09-05]
+### Updated
+- Auto-update pre-commit hooks ([#2793](https://api.github.com/repos/pydanny/cookiecutter-django/pulls/2793))
+
+## [2020-09-04]
+### Updated
+- Update django-extensions to 3.0.8 ([#2792](https://api.github.com/repos/pydanny/cookiecutter-django/pulls/2792))
+- Update isort to 5.5.1 ([#2791](https://api.github.com/repos/pydanny/cookiecutter-django/pulls/2791))
+- Auto-update pre-commit hooks ([#2790](https://api.github.com/repos/pydanny/cookiecutter-django/pulls/2790))
+- Update isort to 5.5.0 ([#2789](https://api.github.com/repos/pydanny/cookiecutter-django/pulls/2789))
+
+## [2020-09-02]
+### Changed
+- Add environment and traces_sample_rate keyword to sentry_sdk.init ([#2777](https://api.github.com/repos/pydanny/cookiecutter-django/pulls/2777))
+### Updated
+- Update sentry-sdk to 0.17.3 ([#2788](https://api.github.com/repos/pydanny/cookiecutter-django/pulls/2788))
+- Update django-extensions to 3.0.7 ([#2787](https://api.github.com/repos/pydanny/cookiecutter-django/pulls/2787))
+
+## [2020-09-01]
+### Changed
+- Exclude venv directory and update document link ([#2780](https://api.github.com/repos/pydanny/cookiecutter-django/pulls/2780))
+### Updated
+- Update tox to 3.20.0 ([#2786](https://api.github.com/repos/pydanny/cookiecutter-django/pulls/2786))
+- Update django-storages to 1.10 ([#2781](https://api.github.com/repos/pydanny/cookiecutter-django/pulls/2781))
+- Update sentry-sdk to 0.17.2 ([#2784](https://api.github.com/repos/pydanny/cookiecutter-django/pulls/2784))
+- Update django to 3.0.10 ([#2785](https://api.github.com/repos/pydanny/cookiecutter-django/pulls/2785))
+- Update sphinx-autobuild to 2020.9.1 ([#2782](https://api.github.com/repos/pydanny/cookiecutter-django/pulls/2782))
+- Update django-extensions to 3.0.6 ([#2783](https://api.github.com/repos/pydanny/cookiecutter-django/pulls/2783))
+
+## [2020-08-31]
+### Updated
+- Update sh to 1.14.0 ([#2779](https://api.github.com/repos/pydanny/cookiecutter-django/pulls/2779))
+- Update sentry-sdk to 0.17.1 ([#2778](https://api.github.com/repos/pydanny/cookiecutter-django/pulls/2778))
+
+## [2020-04-13]
+### Changed
+- Updated to Python 3.8 (@codnee)
+- Moved converage config in setup.cfg (@danihodovic)
+
+## [2020-04-08]
+### Fixed
+- Internal IPs for debug toolbar (@dudanogueira)
+
+## [2020-04-04]
+### Fixed
+- Added compress command command with Django compressor (@gwiskur)
+
+## [2020-03-23]
+### Changed
+- Updated project to Django 3.0
+
+## [2020-03-17]
+### Changed
+- Handle paths using Pathlib (@jules-ch)
+
+### Fixed
+- Pre-commit hook regex (@demestav)
+
+## [2020-03-16]
+### Added
+- Support for all Anymail providers (@Andrew-Chen-Wang)
+### Fixed
+- Django compressor setup (@jameswilliams1)
+
 ## [2020-01-23]
 ### Changed
 - Fix UserFactory to set the password if provided (@BoPeng)

@@ -5,6 +5,10 @@ Cookiecutter Django
     :target: https://travis-ci.org/pydanny/cookiecutter-django?branch=master
     :alt: Build Status
 
+.. image:: https://readthedocs.org/projects/cookiecutter-django/badge/?version=latest
+    :target: https://cookiecutter-django.readthedocs.io/en/latest/?badge=latest
+    :alt: Documentation Status
+
 .. image:: https://pyup.io/repos/github/pydanny/cookiecutter-django/shield.svg
     :target: https://pyup.io/repos/github/pydanny/cookiecutter-django/
     :alt: Updates
@@ -36,8 +40,8 @@ production-ready Django projects quickly.
 Features
 ---------
 
-* For Django 2.2
-* Works with Python 3.7
+* For Django 3.0
+* Works with Python 3.8
 * Renders Django projects with 100% starting test coverage
 * Twitter Bootstrap_ v4 (`maintained Foundation fork`_ also available)
 * 12-Factor_ based settings via django-environ_
@@ -45,8 +49,9 @@ Features
 * Optimized development and production settings
 * Registration via django-allauth_
 * Comes with custom user model ready to go
+* Optional basic ASGI setup for Websockets
 * Optional custom static build using Gulp and livereload
-* Send emails via Anymail_ (using Mailgun_ by default, but switchable)
+* Send emails via Anymail_ (using Mailgun_ by default or Amazon SES if AWS is selected cloud provider, but switchable)
 * Media storage using Amazon S3 or Google Cloud Storage
 * Docker support using docker-compose_ for development and production (using Traefik_ with LetsEncrypt_ support)
 * Procfile_ for deploying to Heroku
@@ -85,13 +90,13 @@ Optional Integrations
 .. _PythonAnywhere: https://www.pythonanywhere.com/
 .. _Traefik: https://traefik.io/
 .. _LetsEncrypt: https://letsencrypt.org/
-.. _pre-commit: https://github.com/pre-commit/pre-commit 
+.. _pre-commit: https://github.com/pre-commit/pre-commit
 
 Constraints
 -----------
 
 * Only maintained 3rd party libraries are used.
-* Uses PostgreSQL everywhere (9.4 - 11.3)
+* Uses PostgreSQL everywhere (9.4 - 12.3)
 * Environment variables for configuration (This won't work with Apache/mod_wsgi).
 
 Support this Project!
@@ -105,16 +110,16 @@ This project is run by volunteers. Please support them in their efforts to maint
 
 Projects that provide financial support to the maintainers:
 
-Two Scoops of Django 1.11
+Django Crash Course
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 
-.. image:: https://cdn.shopify.com/s/files/1/0304/6901/products/2017-06-29-tsd11-sticker-02.png
-   :name: Two Scoops of Django 1.11 Cover
+.. image:: https://cdn.shopify.com/s/files/1/0304/6901/files/Django-Crash-Course-300x436.jpg
+   :name: Django Crash Course: Covers Django 3.0 and Python 3.8
    :align: center
-   :alt: Two Scoops of Django
-   :target: http://twoscoopspress.com/products/two-scoops-of-django-1-11
+   :alt: Django Crash Course
+   :target: https://www.roygreenfeld.com/products/django-crash-course
 
-Two Scoops of Django is the best dessert-themed Django reference in the universe
+Django Crash Course for Django 3.0 and Python 3.8 is the best cheese-themed Django reference in the universe!
 
 pyup
 ~~~~~~~~~~~~~~~~~~
@@ -135,7 +140,7 @@ and then editing the results to include your name, email, and various configurat
 
 First, get Cookiecutter. Trust me, it's awesome::
 
-    $ pip install "cookiecutter>=1.4.0"
+    $ pip install "cookiecutter>=1.7.0"
 
 Now run it against this repo::
 
@@ -171,11 +176,11 @@ Answer the prompts with your own desired options_. For example::
     use_heroku [n]: y
     use_compressor [n]: y
     Select postgresql_version:
-    1 - 11.3
-    2 - 10.8
-    3 - 9.6
-    4 - 9.5
-    5 - 9.4
+    1 - 12.3
+    2 - 11.8
+    3 - 10.8
+    4 - 9.6
+    5 - 9.5
     Choose from 1, 2, 3, 4, 5 [1]: 1
     Select js_task_runner:
     1 - None
@@ -272,7 +277,7 @@ If you do rename your fork, I encourage you to submit it to the following places
 * cookiecutter_ so it gets listed in the README as a template.
 * The cookiecutter grid_ on Django Packages.
 
-.. _cookiecutter: https://github.com/audreyr/cookiecutter
+.. _cookiecutter: https://github.com/cookiecutter/cookiecutter
 .. _grid: https://www.djangopackages.com/grids/g/cookiecutters/
 
 Submit a Pull Request

@@ -25,7 +25,9 @@ Provided you have opted for Celery (via setting ``use_celery`` to ``y``) there a
 
 * ``celeryworker`` running a Celery worker process;
 * ``celerybeat`` running a Celery beat process;
-* ``flower`` running Flower_ (for more info, check out :ref:`CeleryFlower` instructions for local environment).
+* ``flower`` running Flower_.
+
+The ``flower`` service is served by Traefik over HTTPS, through the port ``5555``. For more information about Flower and its login credentials, check out :ref:`CeleryFlower` instructions for local environment.
 
 .. _`Flower`: https://github.com/mher/flower
 
@@ -80,7 +82,7 @@ The Traefik reverse proxy used in the default configuration will get you a valid
 
 You can read more about this feature and how to configure it, at `Automatic HTTPS`_ in the Traefik docs.
 
-.. _Automatic HTTPS: https://docs.traefik.io/configuration/acme/
+.. _Automatic HTTPS: https://docs.traefik.io/https/acme/
 
 
 (Optional) Postgres Data Volume Modifications

@@ -80,6 +80,7 @@ THIRD_PARTY_APPS = [
     "allauth.account",
     "allauth.socialaccount",
     "rest_framework",
+    "rest_framework.authtoken",
     {% if cookiecutter.js_task_runner == "react" -%}
     "corsheaders",
     "graphene_django",
