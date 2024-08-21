@@ -4,7 +4,7 @@ binaryornot==0.4.4
 
 # Code quality
 # ------------------------------------------------------------------------------
-black==19.10b0
+black==24.3.0
 flake8==3.7.9
 
 # Testing
@@ -15,3 +15,5 @@ pytest_cases==1.12.1
 pytest-cookies==0.5.0
 pytest-xdist==1.31.0
 pyyaml==5.3
+urllib3>=2.2.2 # not directly required, pinned by Snyk to avoid a vulnerability
+zipp>=3.19.1 # not directly required, pinned by Snyk to avoid a vulnerability
